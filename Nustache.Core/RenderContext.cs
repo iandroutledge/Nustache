@@ -98,6 +98,8 @@ namespace Nustache.Core
         {
             partialMatch = false;
 
+			path = path.TrimStart("this.".ToCharArray());
+
             var value = ValueGetter.GetValue(data, path);
 
             if (value != null && !ReferenceEquals(value, ValueGetter.NoValue))
